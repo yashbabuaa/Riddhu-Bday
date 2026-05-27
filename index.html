@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Riddhan's 3rd Birthday</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#38bdf8);
+    min-height:100vh;
+    color:white;
+    position:relative;
+}
+
+/* Animated Background */
+
+.bg{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    animation:float 10s infinite linear;
+}
+
+.circle:nth-child(1){
+    width:220px;
+    height:220px;
+    left:-50px;
+    top:10%;
+}
+
+.circle:nth-child(2){
+    width:140px;
+    height:140px;
+    right:10%;
+    top:15%;
+    animation-duration:12s;
+}
+
+.circle:nth-child(3){
+    width:180px;
+    height:180px;
+    bottom:10%;
+    left:15%;
+    animation-duration:15s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-30px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* Hero */
+
+.container{
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.card{
+    width:100%;
+    max-width:420px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:35px;
+    overflow:hidden;
+    box-shadow:0 25px 50px rgba(0,0,0,0.35);
+    position:relative;
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.top{
+    position:relative;
+}
+
+.main-image{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
+}
+
+.content{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    right:20px;
+}
+
+.invite{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(10px);
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:3.3rem;
+    font-weight:900;
+    line-height:1;
+    margin-bottom:10px;
+}
+
+.birthday{
+    font-size:1.3rem;
+    font-weight:500;
+}
+
+/* Details */
+
+.bottom{
+    padding:25px 20px 30px;
+}
+
+.detail-box{
+    background:rgba(255,255,255,0.12);
+    border-radius:22px;
+    padding:18px;
+    margin-bottom:15px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.icon{
+    width:55px;
+    height:55px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#38bdf8,#2563eb);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+}
+
+.label{
+    font-size:13px;
+    opacity:0.7;
+}
+
+.value{
+    font-size:1.15rem;
+    font-weight:700;
+}
+
+/* Countdown */
+
+.countdown{
+    margin-top:25px;
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.time{
+    flex:1;
+    background:rgba(255,255,255,0.12);
+    border-radius:20px;
+    padding:15px 10px;
+    text-align:center;
+}
+
+.time h2{
+    font-size:1.8rem;
+}
+
+.time p{
+    font-size:12px;
+    opacity:0.7;
+}
+
+/* Floating image */
+
+.floating{
+    position:absolute;
+    width:110px;
+    height:110px;
+    border-radius:25px;
+    object-fit:cover;
+    border:4px solid white;
+    right:15px;
+    top:360px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    animation:bounce 4s infinite;
+}
+
+@keyframes bounce{
+    0%{
+        transform:translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform:translateY(-15px) rotate(4deg);
+    }
+    100%{
+        transform:translateY(0px) rotate(0deg);
+    }
+}
+
+/* Button */
+
+.btn{
+    margin-top:25px;
+    width:100%;
+    border:none;
+    padding:18px;
+    border-radius:18px;
+    font-size:1rem;
+    font-weight:700;
+    background:linear-gradient(135deg,#38bdf8,#2563eb);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.03);
+}
+
+/* Footer */
+
+.footer{
+    text-align:center;
+    margin-top:18px;
+    opacity:0.75;
+    font-size:14px;
+}
+
+/* Confetti */
+
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    top:-10px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Music -->
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=kids-happy-birthday-127842.mp3" type="audio/mp3">
+</audio>
+
+<!-- Animated Background -->
+<div class="bg">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="top">
+
+            <img 
+                src="IMG20250314073155.jpg" 
+                class="main-image"
+            >
+
+            <div class="overlay"></div>
+
+            <div class="content">
+
+                <div class="invite">
+                    🎉 YOU'RE INVITED 🎉
+                </div>
+
+                <h1>Riddhan</h1>
+
+                <div class="birthday">
+                    is turning 3 🥳
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Floating image -->
+        <img 
+            src="motion_photo_3760710282170680914.jpg"
+            class="floating"
+        >
+
+        <div class="bottom">
+
+            <div class="detail-box">
+                <div class="icon">📍</div>
+
+                <div>
+                    <div class="label">Venue</div>
+                    <div class="value">B-2/1</div>
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <div class="icon">📅</div>
+
+                <div>
+                    <div class="label">Date & Time</div>
+                    <div class="value">2 June, 5 PM</div>
+                </div>
+            </div>
+
+            <!-- Countdown -->
+
+            <div class="countdown">
+
+                <div class="time">
+                    <h2 id="days">00</h2>
+                    <p>DAYS</p>
+                </div>
+
+                <div class="time">
+                    <h2 id="hours">00</h2>
+                    <p>HOURS</p>
+                </div>
+
+                <div class="time">
+                    <h2 id="minutes">00</h2>
+                    <p>MINUTES</p>
+                </div>
+
+            </div>
+
+            <button class="btn">
+                🎂 Let's Celebrate
+            </button>
+
+            <div class="footer">
+                Made with ❤️ for Riddhan's Birthday
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* Countdown */
+
+const birthday = new Date("June 2, 2026 17:00:00").getTime();
+
+setInterval(() => {
+
+    const now = new Date().getTime();
+
+    const distance = birthday - now;
+
+    const days = Math.floor(distance / (1000*60*60*24));
+
+    const hours = Math.floor(
+        (distance % (1000*60*60*24)) / (1000*60*60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000*60*60)) / (1000*60)
+    );
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+
+},1000);
+
+
+/* Confetti */
+
+function createConfetti(){
+
+    const confetti = document.createElement("div");
+
+    confetti.classList.add("confetti");
+
+    confetti.style.left = Math.random() * window.innerWidth + "px";
+
+    confetti.style.background =
+        `hsl(${Math.random()*360},100%,50%)`;
+
+    confetti.style.width =
+        confetti.style.height =
+        Math.random() * 10 + 5 + "px";
+
+    confetti.style.animationDuration =
+        Math.random() * 3 + 2 + "s";
+
+    document.body.appendChild(confetti);
+
+    setTimeout(()=>{
+        confetti.remove();
+    },5000);
+
+}
+
+setInterval(createConfetti,150);
+
+</script>
+
+</body>
+</html>
