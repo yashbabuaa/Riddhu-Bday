@@ -117,7 +117,7 @@
             }
         }
 
-        /* Hero Image */
+        /* Hero */
 
         .hero {
             position: relative;
@@ -144,11 +144,27 @@
             right: 20px;
         }
 
+        /* FIXED FLEX ISSUE */
+
+        .invite-tag,
+        .birthday-text,
+        .popup-box h2,
+        .popup-box p,
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            text-align: center;
+            line-height: 1.5;
+        }
+
         .invite-tag {
-            display: inline-block;
+            width: fit-content;
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-            padding: 8px 18px;
+            padding: 10px 18px;
             border-radius: 30px;
             font-size: 13px;
             margin-bottom: 15px;
@@ -161,9 +177,10 @@
         }
 
         .birthday-text {
-            margin-top: 8px;
-            font-size: 1.25rem;
+            margin-top: 10px;
+            font-size: 1.2rem;
             font-weight: 500;
+            justify-content: flex-start;
         }
 
         /* Floating Image */
@@ -332,12 +349,12 @@
 
         .popup-box h2 {
             font-size: 2rem;
-            margin-bottom: 10px;
+            margin-bottom: 18px;
         }
 
         .popup-box p {
-            margin-top: 8px;
-            line-height: 1.5;
+            font-size: 1rem;
+            flex-direction: column;
         }
 
         .close-btn {
@@ -370,6 +387,7 @@
         /* Mobile */
 
         @media(max-width:480px) {
+
             h1 {
                 font-size: 3rem;
             }
@@ -389,7 +407,7 @@
 
 <body>
 
-    <!-- Background Music -->
+    <!-- Music -->
 
     <audio id="bgMusic" loop>
         <source
@@ -397,7 +415,7 @@
             type="audio/mp3">
     </audio>
 
-    <!-- Background Animation -->
+    <!-- Background -->
 
     <div class="bg">
         <div class="circle"></div>
@@ -410,8 +428,6 @@
     <div class="container">
 
         <div class="card">
-
-            <!-- Hero -->
 
             <div class="hero">
 
@@ -428,7 +444,7 @@
                     <h1>Riddhan</h1>
 
                     <div class="birthday-text">
-                        is turning 3 🥳
+                        🎂 You're Invited to Riddhan's Birthday Party 🎉
                     </div>
 
                 </div>
@@ -494,11 +510,11 @@
                 <!-- Button -->
 
                 <button class="btn" id="partyBtn">
-                    🎂 Let's Celebrate
+                    🎉 Let's Celebrate 🎂
                 </button>
 
                 <div class="footer">
-                    Made with ❤️ for Riddhan's Birthday
+                    Made with ❤️ for Riddhan
                 </div>
 
             </div>
@@ -513,11 +529,13 @@
 
         <div class="popup-box">
 
-            <h2>🎉 Party Time 🎉</h2>
+            <h2>
+                🎉 Party Time 🎉
+            </h2>
 
             <p>
-                We can't wait to celebrate Riddhan's 3rd Birthday with you!
-                Get ready for fun, cake, laughter & magical memories ✨
+                🎂 We can't wait to celebrate with you! <br><br>
+                ✨ Get ready for fun, cake, laughter & magical memories ✨
             </p>
 
             <button class="close-btn" id="closePopup">
@@ -568,7 +586,6 @@
 
         }, 1000);
 
-
         /* Confetti */
 
         function createConfetti() {
@@ -598,8 +615,7 @@
 
         setInterval(createConfetti, 150);
 
-
-        /* Popup Button */
+        /* Popup */
 
         const btn = document.getElementById("partyBtn");
         const popup = document.getElementById("popup");
@@ -609,13 +625,14 @@
 
             popup.classList.add("active");
 
-            /* Music Start */
             document.getElementById("bgMusic").play();
 
         });
 
         closePopup.addEventListener("click", () => {
+
             popup.classList.remove("active");
+
         });
 
     </script>
