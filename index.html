@@ -26,7 +26,7 @@
             position: relative;
         }
 
-        /* Animated Background */
+        /* Background Animation */
 
         .bg {
             position: fixed;
@@ -79,7 +79,7 @@
             }
         }
 
-        /* Main Container */
+        /* Main Layout */
 
         .container {
             width: 100%;
@@ -89,8 +89,6 @@
             align-items: center;
             padding: 20px;
         }
-
-        /* Card */
 
         .card {
             width: 100%;
@@ -134,7 +132,7 @@
             inset: 0;
             background: linear-gradient(to top,
                     rgba(0, 0, 0, 0.85),
-                    rgba(0, 0, 0, 0.1));
+                    rgba(0, 0, 0, 0.15));
         }
 
         .hero-content {
@@ -144,7 +142,7 @@
             right: 20px;
         }
 
-        /* FIXED FLEX ISSUE */
+        /* Fixed Flex Alignment */
 
         .invite-tag,
         .birthday-text,
@@ -152,11 +150,9 @@
         .popup-box p,
         .btn {
             display: flex;
-            justify-content: center;
             align-items: center;
             gap: 8px;
             flex-wrap: wrap;
-            text-align: center;
             line-height: 1.5;
         }
 
@@ -178,9 +174,8 @@
 
         .birthday-text {
             margin-top: 10px;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 500;
-            justify-content: flex-start;
         }
 
         /* Floating Image */
@@ -193,7 +188,10 @@
             border-radius: 25px;
             border: 4px solid white;
             right: 15px;
-            top: 360px;
+
+            /* UPDATED POSITION */
+            top: 430px;
+
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
             animation: bounce 4s infinite;
         }
@@ -282,6 +280,7 @@
             margin-top: 28px;
             width: 100%;
             border: none;
+            justify-content: center;
             padding: 18px;
             border-radius: 18px;
             background: linear-gradient(135deg, #38bdf8, #2563eb);
@@ -348,13 +347,16 @@
         }
 
         .popup-box h2 {
+            justify-content: center;
             font-size: 2rem;
             margin-bottom: 18px;
         }
 
         .popup-box p {
-            font-size: 1rem;
+            justify-content: center;
+            text-align: center;
             flex-direction: column;
+            font-size: 1rem;
         }
 
         .close-btn {
@@ -399,7 +401,7 @@
             .floating-image {
                 width: 100px;
                 height: 100px;
-                top: 340px;
+                top: 400px;
             }
         }
     </style>
@@ -407,7 +409,7 @@
 
 <body>
 
-    <!-- Music -->
+    <!-- Background Music -->
 
     <audio id="bgMusic" loop>
         <source
@@ -415,7 +417,7 @@
             type="audio/mp3">
     </audio>
 
-    <!-- Background -->
+    <!-- Animated Background -->
 
     <div class="bg">
         <div class="circle"></div>
@@ -428,6 +430,8 @@
     <div class="container">
 
         <div class="card">
+
+            <!-- Hero -->
 
             <div class="hero">
 
@@ -451,7 +455,7 @@
 
             </div>
 
-            <!-- Floating Image -->
+            <!-- Floating Photo -->
 
             <img src="motion_photo_3760710282170680914.jpg" class="floating-image">
 
