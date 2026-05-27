@@ -1,462 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Riddhan's 3rd Birthday</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>Riddhan's 3rd Birthday</title>
 
-<style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-body{
-    overflow-x:hidden;
-    background:linear-gradient(135deg,#0f172a,#1e3a8a,#38bdf8);
-    min-height:100vh;
-    color:white;
-    position:relative;
-}
+        body {
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0f172a, #1d4ed8, #38bdf8);
+            min-height: 100vh;
+            color: white;
+            position: relative;
+        }
 
-/* Animated Background */
+        /* Animated Background */
 
-.bg{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    z-index:-1;
-}
+        .bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
 
-.circle{
-    position:absolute;
-    border-radius:50%;
-    background:rgba(255,255,255,0.08);
-    animation:float 10s infinite linear;
-}
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            animation: float 10s infinite ease-in-out;
+        }
 
-.circle:nth-child(1){
-    width:220px;
-    height:220px;
-    left:-50px;
-    top:10%;
-}
+        .circle:nth-child(1) {
+            width: 220px;
+            height: 220px;
+            left: -70px;
+            top: 10%;
+        }
 
-.circle:nth-child(2){
-    width:140px;
-    height:140px;
-    right:10%;
-    top:15%;
-    animation-duration:12s;
-}
+        .circle:nth-child(2) {
+            width: 180px;
+            height: 180px;
+            right: 5%;
+            top: 15%;
+            animation-duration: 13s;
+        }
 
-.circle:nth-child(3){
-    width:180px;
-    height:180px;
-    bottom:10%;
-    left:15%;
-    animation-duration:15s;
-}
+        .circle:nth-child(3) {
+            width: 160px;
+            height: 160px;
+            left: 15%;
+            bottom: 10%;
+            animation-duration: 15s;
+        }
 
-@keyframes float{
-    0%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(-30px);
-    }
-    100%{
-        transform:translateY(0px);
-    }
-}
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
 
-/* Hero */
+            50% {
+                transform: translateY(-30px);
+            }
 
-.container{
-    padding:20px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-}
+            100% {
+                transform: translateY(0px);
+            }
+        }
 
-.card{
-    width:100%;
-    max-width:420px;
-    background:rgba(255,255,255,0.12);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.15);
-    border-radius:35px;
-    overflow:hidden;
-    box-shadow:0 25px 50px rgba(0,0,0,0.35);
-    position:relative;
-    animation:fadeUp 1s ease;
-}
+        /* Main Container */
 
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-.top{
-    position:relative;
-}
+        /* Card */
 
-.main-image{
-    width:100%;
-    height:420px;
-    object-fit:cover;
-}
+        .card {
+            width: 100%;
+            max-width: 430px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 35px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+            animation: fadeUp 1s ease;
+        }
 
-.overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
-}
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
 
-.content{
-    position:absolute;
-    bottom:20px;
-    left:20px;
-    right:20px;
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.invite{
-    display:inline-block;
-    padding:8px 18px;
-    border-radius:30px;
-    background:rgba(255,255,255,0.2);
-    backdrop-filter:blur(10px);
-    font-size:13px;
-    margin-bottom:15px;
-}
+        /* Hero Image */
 
-h1{
-    font-size:3.3rem;
-    font-weight:900;
-    line-height:1;
-    margin-bottom:10px;
-}
+        .hero {
+            position: relative;
+        }
 
-.birthday{
-    font-size:1.3rem;
-    font-weight:500;
-}
+        .main-image {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+        }
 
-/* Details */
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.85),
+                    rgba(0, 0, 0, 0.1));
+        }
 
-.bottom{
-    padding:25px 20px 30px;
-}
+        .hero-content {
+            position: absolute;
+            bottom: 25px;
+            left: 20px;
+            right: 20px;
+        }
 
-.detail-box{
-    background:rgba(255,255,255,0.12);
-    border-radius:22px;
-    padding:18px;
-    margin-bottom:15px;
-    display:flex;
-    align-items:center;
-    gap:15px;
-    border:1px solid rgba(255,255,255,0.08);
-}
+        .invite-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
 
-.icon{
-    width:55px;
-    height:55px;
-    border-radius:18px;
-    background:linear-gradient(135deg,#38bdf8,#2563eb);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:24px;
-}
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1;
+        }
 
-.label{
-    font-size:13px;
-    opacity:0.7;
-}
+        .birthday-text {
+            margin-top: 8px;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
 
-.value{
-    font-size:1.15rem;
-    font-weight:700;
-}
+        /* Floating Image */
 
-/* Countdown */
+        .floating-image {
+            position: absolute;
+            width: 115px;
+            height: 115px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 4px solid white;
+            right: 15px;
+            top: 360px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            animation: bounce 4s infinite;
+        }
 
-.countdown{
-    margin-top:25px;
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-}
+        @keyframes bounce {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
 
-.time{
-    flex:1;
-    background:rgba(255,255,255,0.12);
-    border-radius:20px;
-    padding:15px 10px;
-    text-align:center;
-}
+            50% {
+                transform: translateY(-15px) rotate(4deg);
+            }
 
-.time h2{
-    font-size:1.8rem;
-}
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
 
-.time p{
-    font-size:12px;
-    opacity:0.7;
-}
+        /* Content */
 
-/* Floating image */
+        .content {
+            padding: 25px 20px 30px;
+        }
 
-.floating{
-    position:absolute;
-    width:110px;
-    height:110px;
-    border-radius:25px;
-    object-fit:cover;
-    border:4px solid white;
-    right:15px;
-    top:360px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.35);
-    animation:bounce 4s infinite;
-}
+        .detail-box {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 22px;
+            padding: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-@keyframes bounce{
-    0%{
-        transform:translateY(0px) rotate(0deg);
-    }
-    50%{
-        transform:translateY(-15px) rotate(4deg);
-    }
-    100%{
-        transform:translateY(0px) rotate(0deg);
-    }
-}
+        .icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #38bdf8, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
 
-/* Button */
+        .label {
+            font-size: 13px;
+            opacity: 0.7;
+        }
 
-.btn{
-    margin-top:25px;
-    width:100%;
-    border:none;
-    padding:18px;
-    border-radius:18px;
-    font-size:1rem;
-    font-weight:700;
-    background:linear-gradient(135deg,#38bdf8,#2563eb);
-    color:white;
-    cursor:pointer;
-    transition:0.3s;
-}
+        .value {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
 
-.btn:hover{
-    transform:scale(1.03);
-}
+        /* Countdown */
 
-/* Footer */
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 25px;
+        }
 
-.footer{
-    text-align:center;
-    margin-top:18px;
-    opacity:0.75;
-    font-size:14px;
-}
+        .time {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 15px 10px;
+            text-align: center;
+        }
 
-/* Confetti */
+        .time h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
 
-.confetti{
-    position:fixed;
-    width:10px;
-    height:10px;
-    top:-10px;
-    animation:fall linear forwards;
-}
+        .time p {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-top: 3px;
+        }
 
-@keyframes fall{
-    to{
-        transform:translateY(110vh) rotate(720deg);
-    }
-}
+        /* Button */
 
-</style>
+        .btn {
+            margin-top: 28px;
+            width: 100%;
+            border: none;
+            padding: 18px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #38bdf8, #2563eb);
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 14px;
+            opacity: 0.75;
+        }
+
+        /* Popup */
+
+        .popup {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s;
+            padding: 20px;
+        }
+
+        .popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-box {
+            background: white;
+            color: #111827;
+            padding: 30px 25px;
+            border-radius: 28px;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            animation: popupAnim 0.5s ease;
+        }
+
+        @keyframes popupAnim {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .popup-box h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .popup-box p {
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        .close-btn {
+            margin-top: 20px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Confetti */
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+            }
+        }
+
+        /* Mobile */
+
+        @media(max-width:480px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .main-image {
+                height: 400px;
+            }
+
+            .floating-image {
+                width: 100px;
+                height: 100px;
+                top: 340px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- Music -->
-<audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=kids-happy-birthday-127842.mp3" type="audio/mp3">
-</audio>
+    <!-- Background Music -->
 
-<!-- Animated Background -->
-<div class="bg">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-</div>
+    <audio id="bgMusic" loop>
+        <source
+            src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=kids-happy-birthday-127842.mp3"
+            type="audio/mp3">
+    </audio>
 
-<div class="container">
+    <!-- Background Animation -->
 
-    <div class="card">
+    <div class="bg">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
 
-        <div class="top">
+    <!-- Main -->
 
-            <img 
-                src="IMG20250314073155.jpg" 
-                class="main-image"
-            >
+    <div class="container">
 
-            <div class="overlay"></div>
+        <div class="card">
+
+            <!-- Hero -->
+
+            <div class="hero">
+
+                <img src="IMG20250314073155.jpg" class="main-image">
+
+                <div class="overlay"></div>
+
+                <div class="hero-content">
+
+                    <div class="invite-tag">
+                        🎉 YOU'RE INVITED 🎉
+                    </div>
+
+                    <h1>Riddhan</h1>
+
+                    <div class="birthday-text">
+                        is turning 3 🥳
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Floating Image -->
+
+            <img src="motion_photo_3760710282170680914.jpg" class="floating-image">
+
+            <!-- Content -->
 
             <div class="content">
 
-                <div class="invite">
-                    🎉 YOU'RE INVITED 🎉
+                <div class="detail-box">
+
+                    <div class="icon">📍</div>
+
+                    <div>
+                        <div class="label">Venue</div>
+                        <div class="value">B-2/1</div>
+                    </div>
+
                 </div>
 
-                <h1>Riddhan</h1>
+                <div class="detail-box">
 
-                <div class="birthday">
-                    is turning 3 🥳
+                    <div class="icon">📅</div>
+
+                    <div>
+                        <div class="label">Date & Time</div>
+                        <div class="value">2 June, 5 PM</div>
+                    </div>
+
                 </div>
 
-            </div>
+                <!-- Countdown -->
 
-        </div>
+                <div class="countdown">
 
-        <!-- Floating image -->
-        <img 
-            src="motion_photo_3760710282170680914.jpg"
-            class="floating"
-        >
+                    <div class="time">
+                        <h2 id="days">00</h2>
+                        <p>DAYS</p>
+                    </div>
 
-        <div class="bottom">
+                    <div class="time">
+                        <h2 id="hours">00</h2>
+                        <p>HOURS</p>
+                    </div>
 
-            <div class="detail-box">
-                <div class="icon">📍</div>
+                    <div class="time">
+                        <h2 id="minutes">00</h2>
+                        <p>MINUTES</p>
+                    </div>
 
-                <div>
-                    <div class="label">Venue</div>
-                    <div class="value">B-2/1</div>
-                </div>
-            </div>
+                    <div class="time">
+                        <h2 id="seconds">00</h2>
+                        <p>SECONDS</p>
+                    </div>
 
-            <div class="detail-box">
-                <div class="icon">📅</div>
-
-                <div>
-                    <div class="label">Date & Time</div>
-                    <div class="value">2 June, 5 PM</div>
-                </div>
-            </div>
-
-            <!-- Countdown -->
-
-            <div class="countdown">
-
-                <div class="time">
-                    <h2 id="days">00</h2>
-                    <p>DAYS</p>
                 </div>
 
-                <div class="time">
-                    <h2 id="hours">00</h2>
-                    <p>HOURS</p>
+                <!-- Button -->
+
+                <button class="btn" id="partyBtn">
+                    🎂 Let's Celebrate
+                </button>
+
+                <div class="footer">
+                    Made with ❤️ for Riddhan's Birthday
                 </div>
 
-                <div class="time">
-                    <h2 id="minutes">00</h2>
-                    <p>MINUTES</p>
-                </div>
-
-            </div>
-
-            <button class="btn">
-                🎂 Let's Celebrate
-            </button>
-
-            <div class="footer">
-                Made with ❤️ for Riddhan's Birthday
             </div>
 
         </div>
 
     </div>
 
-</div>
+    <!-- Popup -->
 
-<script>
+    <div class="popup" id="popup">
 
-/* Countdown */
+        <div class="popup-box">
 
-const birthday = new Date("June 2, 2026 17:00:00").getTime();
+            <h2>🎉 Party Time 🎉</h2>
 
-setInterval(() => {
+            <p>
+                We can't wait to celebrate Riddhan's 3rd Birthday with you!
+                Get ready for fun, cake, laughter & magical memories ✨
+            </p>
 
-    const now = new Date().getTime();
+            <button class="close-btn" id="closePopup">
+                Close
+            </button>
 
-    const distance = birthday - now;
+        </div>
 
-    const days = Math.floor(distance / (1000*60*60*24));
+    </div>
 
-    const hours = Math.floor(
-        (distance % (1000*60*60*24)) / (1000*60*60)
-    );
+    <script>
 
-    const minutes = Math.floor(
-        (distance % (1000*60*60)) / (1000*60)
-    );
+        /* Countdown */
 
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
+        const birthday = new Date("June 2, 2026 17:00:00").getTime();
 
-},1000);
+        setInterval(() => {
+
+            const now = new Date().getTime();
+
+            const distance = birthday - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            const hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+
+            const minutes = Math.floor(
+                (distance % (1000 * 60 * 60)) / (1000 * 60)
+            );
+
+            const seconds = Math.floor(
+                (distance % (1000 * 60)) / 1000
+            );
+
+            document.getElementById("days").innerHTML =
+                String(days).padStart(2, '0');
+
+            document.getElementById("hours").innerHTML =
+                String(hours).padStart(2, '0');
+
+            document.getElementById("minutes").innerHTML =
+                String(minutes).padStart(2, '0');
+
+            document.getElementById("seconds").innerHTML =
+                String(seconds).padStart(2, '0');
+
+        }, 1000);
 
 
-/* Confetti */
+        /* Confetti */
 
-function createConfetti(){
+        function createConfetti() {
 
-    const confetti = document.createElement("div");
+            const confetti = document.createElement("div");
 
-    confetti.classList.add("confetti");
+            confetti.classList.add("confetti");
 
-    confetti.style.left = Math.random() * window.innerWidth + "px";
+            confetti.style.left = Math.random() * window.innerWidth + "px";
 
-    confetti.style.background =
-        `hsl(${Math.random()*360},100%,50%)`;
+            confetti.style.background =
+                `hsl(${Math.random() * 360},100%,50%)`;
 
-    confetti.style.width =
-        confetti.style.height =
-        Math.random() * 10 + 5 + "px";
+            confetti.style.width =
+                confetti.style.height =
+                Math.random() * 10 + 5 + "px";
 
-    confetti.style.animationDuration =
-        Math.random() * 3 + 2 + "s";
+            confetti.style.animationDuration =
+                Math.random() * 3 + 2 + "s";
 
-    document.body.appendChild(confetti);
+            document.body.appendChild(confetti);
 
-    setTimeout(()=>{
-        confetti.remove();
-    },5000);
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
 
-}
+        setInterval(createConfetti, 150);
 
-setInterval(createConfetti,150);
 
-</script>
+        /* Popup Button */
+
+        const btn = document.getElementById("partyBtn");
+        const popup = document.getElementById("popup");
+        const closePopup = document.getElementById("closePopup");
+
+        btn.addEventListener("click", () => {
+
+            popup.classList.add("active");
+
+            /* Music Start */
+            document.getElementById("bgMusic").play();
+
+        });
+
+        closePopup.addEventListener("click", () => {
+            popup.classList.remove("active");
+        });
+
+    </script>
 
 </body>
+
 </html>
