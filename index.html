@@ -855,5 +855,23 @@
 
         downloadBtn.addEventListener("click", () => {
 
-            html2canvas(document.querySelector("#posterCard"))
+            html2canvas(document.querySelector("#posterCard")).then(canvas => {
+
+                    const link = document.createElement("a");
+
+                    link.download = "Hridhaan-Birthday-Poster.png";
+
+                    link.href = canvas.toDataURL();
+
+                    link.click();
+
+                });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
                 
