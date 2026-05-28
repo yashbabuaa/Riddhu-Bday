@@ -330,7 +330,7 @@
             padding: 20px;
             border-radius: 28px;
             width: 100%;
-            max-width: 360px;
+            max-width: 390px;
             text-align: center;
             animation: popupAnim 0.5s ease;
         }
@@ -353,13 +353,6 @@
             margin-bottom: 18px;
         }
 
-        .popup-box p {
-            justify-content: center;
-            text-align: center;
-            flex-direction: column;
-            font-size: 1rem;
-        }
-
         .close-btn {
             margin-top: 20px;
             border: none;
@@ -371,48 +364,117 @@
             cursor: pointer;
         }
 
-        /* Poster */
+        /* FUN POSTER */
 
-        .poster {
+        .fun-poster {
+            background: linear-gradient(180deg,
+                    #ffbe0b,
+                    #fb5607,
+                    #ff006e);
+
+            border-radius: 35px;
+            padding: 25px;
+            color: white;
             position: relative;
-            width: 100%;
-            height: 520px;
-            border-radius: 25px;
             overflow: hidden;
         }
 
-        .poster img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .poster-overlay {
+        .fun-poster::before {
+            content: "🦁 🐼 🦒 🐵";
             position: absolute;
-            inset: 0;
-            background: linear-gradient(to top,
-                    rgba(0, 0, 0, 0.85),
-                    rgba(0, 0, 0, 0.15));
+            top: 15px;
+            left: 20px;
+            font-size: 2rem;
+            opacity: 0.25;
         }
 
-        .poster-content {
+        .fun-poster::after {
+            content: "🐯 🐻 🦄 🎈";
             position: absolute;
-            inset: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            color: white;
+            bottom: 15px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.25;
         }
 
-        .poster-content h1 {
-            font-size: 3rem;
+        .poster-top {
+            text-align: center;
+        }
+
+        .poster-title {
+            font-size: 14px;
+            letter-spacing: 3px;
+            font-weight: 700;
             margin-bottom: 10px;
         }
 
-        .poster-content p {
+        .fun-poster h1 {
+            font-size: 4rem;
+            line-height: 0.9;
+            margin-bottom: 12px;
+        }
+
+        .turning {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .poster-photo-wrap {
+            margin-top: 25px;
+            position: relative;
+        }
+
+        .poster-main-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 30px;
+            border: 5px solid white;
+        }
+
+        .poster-small-img {
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 5px solid white;
+            right: -10px;
+            bottom: -20px;
+            transform: rotate(8deg);
+        }
+
+        .poster-details {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .poster-detail {
+            background: rgba(255, 255, 255, 0.18);
+            padding: 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .poster-footer {
+            margin-top: 25px;
+            text-align: center;
             font-size: 1rem;
-            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .poster-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .poster-buttons .close-btn {
+            flex: 1;
         }
 
         /* Confetti */
@@ -451,6 +513,10 @@
 
             .buttons {
                 flex-direction: column;
+            }
+
+            .fun-poster h1 {
+                font-size: 3.2rem;
             }
         }
     </style>
@@ -567,7 +633,7 @@
                     </button>
 
                     <button class="btn" id="posterBtn">
-                        🖼 View Poster
+                        🖼 Poster
                     </button>
 
                 </div>
@@ -606,41 +672,73 @@
 
     </div>
 
-    <!-- Poster Popup -->
+    <!-- FUN POSTER -->
 
     <div class="popup" id="posterPopup">
 
         <div class="popup-box">
 
-            <div class="poster">
+            <div class="fun-poster" id="posterCard">
 
-                <img src="IMG20250314073155.jpg">
+                <div class="poster-top">
 
-                <div class="poster-overlay"></div>
-
-                <div class="poster-content">
-
-                    <p>🎉 Birthday Celebration 🎉</p>
+                    <div class="poster-title">
+                        🦁 HAPPY BIRTHDAY 🐼
+                    </div>
 
                     <h1>Hridhaan</h1>
 
-                    <p>🎂 Turning 3</p>
+                    <div class="turning">
+                        is turning 3 🥳
+                    </div>
 
-                    <p>📍 Venue: B-2/1</p>
+                </div>
 
-                    <p>📅 2 June, 5 PM</p>
+                <div class="poster-photo-wrap">
 
+                    <img src="IMG20250314073155.jpg"
+                        class="poster-main-img">
+
+                    <img src="motion_photo_3760710282170680914.jpg"
+                        class="poster-small-img">
+
+                </div>
+
+                <div class="poster-details">
+
+                    <div class="poster-detail">
+                        🎈 2 June • 5 PM 🎈
+                    </div>
+
+                    <div class="poster-detail">
+                        🏠 Venue: B-2/1 🏠
+                    </div>
+
+                </div>
+
+                <div class="poster-footer">
+                    🎂 Cake • Games • Fun • Music 🎂
                 </div>
 
             </div>
 
-            <button class="close-btn" id="closePoster">
-                Close Poster
-            </button>
+            <div class="poster-buttons">
+
+                <button class="close-btn" id="downloadPoster">
+                    ⬇ Download
+                </button>
+
+                <button class="close-btn" id="closePoster">
+                    Close
+                </button>
+
+            </div>
 
         </div>
 
     </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
     <script>
 
@@ -690,7 +788,8 @@
 
             confetti.classList.add("confetti");
 
-            confetti.style.left = Math.random() * window.innerWidth + "px";
+            confetti.style.left =
+                Math.random() * window.innerWidth + "px";
 
             confetti.style.background =
                 `hsl(${Math.random() * 360},100%,50%)`;
@@ -749,8 +848,12 @@
 
         });
 
-    </script>
+        /* Download Poster */
 
-</body>
+        const downloadBtn =
+            document.getElementById("downloadPoster");
 
-</html>
+        downloadBtn.addEventListener("click", () => {
+
+            html2canvas(document.querySelector("#posterCard"))
+                
