@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Hridhaan's 3rd Birthday</title>
+    <title>Hridhaan's Birthday Invitation</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
@@ -15,7 +15,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: "Poppins", sans-serif;
         }
 
         body {
@@ -26,7 +26,7 @@
             position: relative;
         }
 
-        /* Background Animation */
+        /* Background */
 
         .bg {
             position: fixed;
@@ -79,7 +79,7 @@
             }
         }
 
-        /* Main Layout */
+        /* Layout */
 
         .container {
             width: 100%;
@@ -141,8 +141,6 @@
             left: 20px;
             right: 20px;
         }
-
-        /* Fixed Flex Alignment */
 
         .invite-tag,
         .birthday-text,
@@ -271,18 +269,23 @@
             margin-top: 3px;
         }
 
-        /* Button */
+        /* Buttons */
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+        }
 
         .btn {
-            margin-top: 28px;
-            width: 100%;
+            flex: 1;
             border: none;
             justify-content: center;
-            padding: 18px;
+            padding: 16px;
             border-radius: 18px;
             background: linear-gradient(135deg, #38bdf8, #2563eb);
             color: white;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
@@ -313,6 +316,7 @@
             visibility: hidden;
             transition: 0.4s;
             padding: 20px;
+            z-index: 999;
         }
 
         .popup.active {
@@ -323,10 +327,10 @@
         .popup-box {
             background: white;
             color: #111827;
-            padding: 30px 25px;
+            padding: 20px;
             border-radius: 28px;
             width: 100%;
-            max-width: 350px;
+            max-width: 360px;
             text-align: center;
             animation: popupAnim 0.5s ease;
         }
@@ -367,6 +371,50 @@
             cursor: pointer;
         }
 
+        /* Poster */
+
+        .poster {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .poster-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.85),
+                    rgba(0, 0, 0, 0.15));
+        }
+
+        .poster-content {
+            position: absolute;
+            inset: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: white;
+        }
+
+        .poster-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .poster-content p {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
         /* Confetti */
 
         .confetti {
@@ -400,13 +448,17 @@
                 height: 100px;
                 top: 400px;
             }
+
+            .buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Background Music -->
+    <!-- Music -->
 
     <audio id="bgMusic" loop>
         <source
@@ -427,8 +479,6 @@
     <div class="container">
 
         <div class="card">
-
-            <!-- Hero -->
 
             <div class="hero">
 
@@ -508,11 +558,19 @@
 
                 </div>
 
-                <!-- Button -->
+                <!-- Buttons -->
 
-                <button class="btn" id="partyBtn">
-                    🎉 Let's Celebrate 🎂
-                </button>
+                <div class="buttons">
+
+                    <button class="btn" id="partyBtn">
+                        🎉 Celebrate
+                    </button>
+
+                    <button class="btn" id="posterBtn">
+                        🖼 View Poster
+                    </button>
+
+                </div>
 
                 <div class="footer">
                     Made with ❤️ for Hridhaan
@@ -524,14 +582,14 @@
 
     </div>
 
-    <!-- Popup -->
+    <!-- Celebrate Popup -->
 
     <div class="popup" id="popup">
 
         <div class="popup-box">
 
             <h2>
-                🎉 Party Time
+                🎉 Party Time 🎉
             </h2>
 
             <p>
@@ -542,6 +600,42 @@
 
             <button class="close-btn" id="closePopup">
                 Close
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Poster Popup -->
+
+    <div class="popup" id="posterPopup">
+
+        <div class="popup-box">
+
+            <div class="poster">
+
+                <img src="IMG20250314073155.jpg">
+
+                <div class="poster-overlay"></div>
+
+                <div class="poster-content">
+
+                    <p>🎉 Birthday Celebration 🎉</p>
+
+                    <h1>Hridhaan</h1>
+
+                    <p>🎂 Turning 3</p>
+
+                    <p>📍 Venue: B-2/1</p>
+
+                    <p>📅 2 June, 5 PM</p>
+
+                </div>
+
+            </div>
+
+            <button class="close-btn" id="closePoster">
+                Close Poster
             </button>
 
         </div>
@@ -617,7 +711,7 @@
 
         setInterval(createConfetti, 150);
 
-        /* Popup */
+        /* Celebrate Popup */
 
         const btn = document.getElementById("partyBtn");
         const popup = document.getElementById("popup");
@@ -634,6 +728,24 @@
         closePopup.addEventListener("click", () => {
 
             popup.classList.remove("active");
+
+        });
+
+        /* Poster Popup */
+
+        const posterBtn = document.getElementById("posterBtn");
+        const posterPopup = document.getElementById("posterPopup");
+        const closePoster = document.getElementById("closePoster");
+
+        posterBtn.addEventListener("click", () => {
+
+            posterPopup.classList.add("active");
+
+        });
+
+        closePoster.addEventListener("click", () => {
+
+            posterPopup.classList.remove("active");
 
         });
 
