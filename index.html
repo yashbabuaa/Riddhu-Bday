@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Hridhaan's Birthday Invitation</title>
+    <title>Hridhaan's 3rd Birthday</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
@@ -15,7 +15,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
@@ -26,7 +26,7 @@
             position: relative;
         }
 
-        /* Background */
+        /* Background Animation */
 
         .bg {
             position: fixed;
@@ -79,7 +79,7 @@
             }
         }
 
-        /* Layout */
+        /* Main Layout */
 
         .container {
             width: 100%;
@@ -141,6 +141,8 @@
             left: 20px;
             right: 20px;
         }
+
+        /* Fixed Flex Alignment */
 
         .invite-tag,
         .birthday-text,
@@ -269,23 +271,18 @@
             margin-top: 3px;
         }
 
-        /* Buttons */
-
-        .buttons {
-            display: flex;
-            gap: 12px;
-            margin-top: 28px;
-        }
+        /* Button */
 
         .btn {
-            flex: 1;
+            margin-top: 28px;
+            width: 100%;
             border: none;
             justify-content: center;
-            padding: 16px;
+            padding: 18px;
             border-radius: 18px;
             background: linear-gradient(135deg, #38bdf8, #2563eb);
             color: white;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
@@ -316,7 +313,6 @@
             visibility: hidden;
             transition: 0.4s;
             padding: 20px;
-            z-index: 999;
         }
 
         .popup.active {
@@ -327,10 +323,10 @@
         .popup-box {
             background: white;
             color: #111827;
-            padding: 20px;
+            padding: 30px 25px;
             border-radius: 28px;
             width: 100%;
-            max-width: 390px;
+            max-width: 350px;
             text-align: center;
             animation: popupAnim 0.5s ease;
         }
@@ -353,6 +349,13 @@
             margin-bottom: 18px;
         }
 
+        .popup-box p {
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            font-size: 1rem;
+        }
+
         .close-btn {
             margin-top: 20px;
             border: none;
@@ -362,119 +365,6 @@
             border-radius: 14px;
             font-weight: 600;
             cursor: pointer;
-        }
-
-        /* FUN POSTER */
-
-        .fun-poster {
-            background: linear-gradient(180deg,
-                    #ffbe0b,
-                    #fb5607,
-                    #ff006e);
-
-            border-radius: 35px;
-            padding: 25px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .fun-poster::before {
-            content: "🦁 🐼 🦒 🐵";
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            font-size: 2rem;
-            opacity: 0.25;
-        }
-
-        .fun-poster::after {
-            content: "🐯 🐻 🦄 🎈";
-            position: absolute;
-            bottom: 15px;
-            right: 20px;
-            font-size: 2rem;
-            opacity: 0.25;
-        }
-
-        .poster-top {
-            text-align: center;
-        }
-
-        .poster-title {
-            font-size: 14px;
-            letter-spacing: 3px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .fun-poster h1 {
-            font-size: 4rem;
-            line-height: 0.9;
-            margin-bottom: 12px;
-        }
-
-        .turning {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .poster-photo-wrap {
-            margin-top: 25px;
-            position: relative;
-        }
-
-        .poster-main-img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            border-radius: 30px;
-            border: 5px solid white;
-        }
-
-        .poster-small-img {
-            position: absolute;
-            width: 110px;
-            height: 110px;
-            object-fit: cover;
-            border-radius: 25px;
-            border: 5px solid white;
-            right: -10px;
-            bottom: -20px;
-            transform: rotate(8deg);
-        }
-
-        .poster-details {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .poster-detail {
-            background: rgba(255, 255, 255, 0.18);
-            padding: 16px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            font-size: 1.05rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .poster-footer {
-            margin-top: 25px;
-            text-align: center;
-            font-size: 1rem;
-            font-weight: 700;
-        }
-
-        .poster-buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .poster-buttons .close-btn {
-            flex: 1;
         }
 
         /* Confetti */
@@ -510,21 +400,13 @@
                 height: 100px;
                 top: 400px;
             }
-
-            .buttons {
-                flex-direction: column;
-            }
-
-            .fun-poster h1 {
-                font-size: 3.2rem;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Music -->
+    <!-- Background Music -->
 
     <audio id="bgMusic" loop>
         <source
@@ -545,6 +427,8 @@
     <div class="container">
 
         <div class="card">
+
+            <!-- Hero -->
 
             <div class="hero">
 
@@ -624,19 +508,11 @@
 
                 </div>
 
-                <!-- Buttons -->
+                <!-- Button -->
 
-                <div class="buttons">
-
-                    <button class="btn" id="partyBtn">
-                        🎉 Celebrate
-                    </button>
-
-                    <button class="btn" id="posterBtn">
-                        🖼 Poster
-                    </button>
-
-                </div>
+                <button class="btn" id="partyBtn">
+                    🎉 Let's Celebrate 🎂
+                </button>
 
                 <div class="footer">
                     Made with ❤️ for Hridhaan
@@ -648,14 +524,14 @@
 
     </div>
 
-    <!-- Celebrate Popup -->
+    <!-- Popup -->
 
     <div class="popup" id="popup">
 
         <div class="popup-box">
 
             <h2>
-                🎉 Party Time 🎉
+                🎉 Party Time
             </h2>
 
             <p>
@@ -671,74 +547,6 @@
         </div>
 
     </div>
-
-    <!-- FUN POSTER -->
-
-    <div class="popup" id="posterPopup">
-
-        <div class="popup-box">
-
-            <div class="fun-poster" id="posterCard">
-
-                <div class="poster-top">
-
-                    <div class="poster-title">
-                        🦁 HAPPY BIRTHDAY 🐼
-                    </div>
-
-                    <h1>Hridhaan</h1>
-
-                    <div class="turning">
-                        is turning 3 🥳
-                    </div>
-
-                </div>
-
-                <div class="poster-photo-wrap">
-
-                    <img src="IMG20250314073155.jpg"
-                        class="poster-main-img">
-
-                    <img src="motion_photo_3760710282170680914.jpg"
-                        class="poster-small-img">
-
-                </div>
-
-                <div class="poster-details">
-
-                    <div class="poster-detail">
-                        🎈 2 June • 5 PM 🎈
-                    </div>
-
-                    <div class="poster-detail">
-                        🏠 Venue: B-2/1 🏠
-                    </div>
-
-                </div>
-
-                <div class="poster-footer">
-                    🎂 Cake • Games • Fun • Music 🎂
-                </div>
-
-            </div>
-
-            <div class="poster-buttons">
-
-                <button class="close-btn" id="downloadPoster">
-                    ⬇ Download
-                </button>
-
-                <button class="close-btn" id="closePoster">
-                    Close
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
     <script>
 
@@ -788,8 +596,7 @@
 
             confetti.classList.add("confetti");
 
-            confetti.style.left =
-                Math.random() * window.innerWidth + "px";
+            confetti.style.left = Math.random() * window.innerWidth + "px";
 
             confetti.style.background =
                 `hsl(${Math.random() * 360},100%,50%)`;
@@ -810,7 +617,7 @@
 
         setInterval(createConfetti, 150);
 
-        /* Celebrate Popup */
+        /* Popup */
 
         const btn = document.getElementById("partyBtn");
         const popup = document.getElementById("popup");
@@ -830,48 +637,8 @@
 
         });
 
-        /* Poster Popup */
-
-        const posterBtn = document.getElementById("posterBtn");
-        const posterPopup = document.getElementById("posterPopup");
-        const closePoster = document.getElementById("closePoster");
-
-        posterBtn.addEventListener("click", () => {
-
-            posterPopup.classList.add("active");
-
-        });
-
-        closePoster.addEventListener("click", () => {
-
-            posterPopup.classList.remove("active");
-
-        });
-
-        /* Download Poster */
-
-        const downloadBtn =
-            document.getElementById("downloadPoster");
-
-        downloadBtn.addEventListener("click", () => {
-
-            html2canvas(document.querySelector("#posterCard")).then(canvas => {
-
-                    const link = document.createElement("a");
-
-                    link.download = "Hridhaan-Birthday-Poster.png";
-
-                    link.href = canvas.toDataURL();
-
-                    link.click();
-
-                });
-
-        });
-
     </script>
 
 </body>
 
 </html>
-                
